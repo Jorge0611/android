@@ -1,5 +1,5 @@
 
-#Hands Sign and Face Recognition
+#Hands Sign Recognition
 
 
 

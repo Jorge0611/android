@@ -49,7 +49,7 @@ public class HandActivity extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
 
     AutoMLImageLabelerRemoteModel remoteModel =
-            new AutoMLImageLabelerRemoteModel.Builder("Hands_20207192830").build();
+            new AutoMLImageLabelerRemoteModel.Builder("Hands_2020721235612").build();
 
     DownloadConditions downloadConditions = new DownloadConditions.Builder()
             .requireWifi()
@@ -132,7 +132,7 @@ public class HandActivity extends AppCompatActivity {
                     float confidence = labels.get(0).getConfidence();
                     textView.setText(eachLabel+" : "+ (""+confidence * 100).subSequence(0,4)+"%"+"\n");
                 }
-                switch (eachLabel){
+             switch (eachLabel){
                     case "HELP":
                         textView.append("Comunicate");
 
@@ -178,7 +178,11 @@ public class HandActivity extends AppCompatActivity {
                         Intent intent = new Intent(Intent.ACTION_DIAL);
                         startActivity(intent);
                         break;
+
+
                 }
+
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

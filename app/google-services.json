@@ -1,34 +1,63 @@
 {
   "project_info": {
-    "project_number": "157319787689",
-    "firebase_url": "https://automl-kit.firebaseio.com",
-    "project_id": "automl-kit",
-    "storage_bucket": "automl-kit.appspot.com"
+    "project_number": "87397565953",
+    "firebase_url": "https://auto-ml-vision-edge-931b6.firebaseio.com",
+    "project_id": "auto-ml-vision-edge-931b6",
+    "storage_bucket": "auto-ml-vision-edge-931b6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:157319787689:android:0b5e581c47d88b69b4e5b8",
+        "mobilesdk_app_id": "1:87397565953:android:11aa2a18bc552f9a09a200",
         "android_client_info": {
-          "package_name": "org.tensorflow.lite.examples.facerecognition"
+          "package_name": "com.lauszus.facerecognitionapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "157319787689-j157sjg4bq0db2p0bhu58s8j4bp4s0jk.apps.googleusercontent.com",
+          "client_id": "87397565953-aqhnp3s6hdhd68iemsd7bfqeb91svgc1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAxr2jKTTiZ4EqP9IbiVBUr0KIr39ctOP8"
+          "current_key": "AIzaSyC_SB5gLqLIVJCOP7szA_LqgwDR529lafo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "157319787689-j157sjg4bq0db2p0bhu58s8j4bp4s0jk.apps.googleusercontent.com",
+              "client_id": "87397565953-aqhnp3s6hdhd68iemsd7bfqeb91svgc1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87397565953:android:ecfc4dc31b485df209a200",
+        "android_client_info": {
+          "package_name": "org.tensorflow.lite.examples.facerecognition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87397565953-aqhnp3s6hdhd68iemsd7bfqeb91svgc1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_SB5gLqLIVJCOP7szA_LqgwDR529lafo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87397565953-aqhnp3s6hdhd68iemsd7bfqeb91svgc1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
