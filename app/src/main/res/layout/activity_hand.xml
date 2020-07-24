@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
+    android:background="@drawable/fondo_degrado"
     tools:context="org.tensorflow.lite.examples.detection.HandActivity">
 
     <ImageView
