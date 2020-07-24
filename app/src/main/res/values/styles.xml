@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/tfe_color_primary</item>
         <item name="colorPrimaryDark">#000000</item>
-        <item name="colorAccent">#D7DCE4</item>
+        <item name="colorAccent">#518FF3</item>
     </style>
 
 </resources>

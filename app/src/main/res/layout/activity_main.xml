@@ -10,41 +10,46 @@
     app:srcCompat="@drawable/twiter"
     tools:context="org.tensorflow.lite.examples.detection.MainActivity">
 
+
+
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageView3"
         android:layout_width="265dp"
         android:layout_height="244dp"
         android:layout_marginBottom="40dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/face" />
+        app:srcCompat="@drawable/logo3" />
 
     <Button
         android:id="@+id/face"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:background="@drawable/btn_1"
         android:text="@string/faceString" />
 
     <Button
         android:id="@+id/hand"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="@string/handString"/>
+        android:background="@drawable/btn_1"
+        android:text="@string/handString" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        app:srcCompat="@drawable/instagram"
-        android:layout_marginBottom="10dp"/>
+        app:srcCompat="@drawable/instagram"/>
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="195dp"
+        android:layout_height="42dp"
         android:gravity="center"
-        android:text="Face_RecognitionRD" />
+        android:text="#Face_RecognitionRD" />
+
+
 
 
 </LinearLayout>
