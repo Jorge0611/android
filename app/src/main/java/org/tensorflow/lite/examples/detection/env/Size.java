@@ -17,7 +17,6 @@ package org.tensorflow.lite.examples.detection.env;
 
 import android.graphics.Bitmap;
 import android.text.TextUtils;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;

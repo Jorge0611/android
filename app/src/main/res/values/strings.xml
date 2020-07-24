@@ -1,5 +1,5 @@
 <resources>
-    <string name="faceString">Face Detection</string>
+    <string name="faceString">Face Recognition</string>
     <string name="handString">Sign Detection</string>
     <string name="select_image">Select Image</string>
     <string name="take_picture">Take Picture</string>

@@ -1,5 +1,5 @@
-Call
-Good
-Cpr
-Help
-Injured
+CPR
+HELP
+GOOD
+INJURED
+CALL
