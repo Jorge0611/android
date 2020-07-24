@@ -1,5 +1,11 @@
 package org.tensorflow.lite.examples.detection;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,12 +22,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.mlkit.common.model.DownloadConditions;
@@ -35,6 +35,7 @@ import com.google.mlkit.vision.label.automl.AutoMLImageLabelerOptions;
 import com.google.mlkit.vision.label.automl.AutoMLImageLabelerRemoteModel;
 
 import java.util.List;
+
 
 public class HandActivity extends AppCompatActivity {
     private ImageView imageView;
@@ -59,6 +60,7 @@ public class HandActivity extends AppCompatActivity {
             new AutoMLImageLabelerLocalModel.Builder()
                     .setAssetFilePath("model/manifest.json")
                     .build();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,14 +72,12 @@ public class HandActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
 
         dialog = new ProgressDialog(this);
-
-
         take.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(ContextCompat.checkSelfPermission(HandActivity.this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
-                    ActivityCompat.requestPermissions(HandActivity.this, new String[]{Manifest.permission.CAMERA},PERMISSION_FILE);
-                }else{
+                if (ContextCompat.checkSelfPermission(HandActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(HandActivity.this, new String[]{Manifest.permission.CAMERA}, PERMISSION_FILE);
+                } else {
                     dispatchTakePictureIntent();
                 }
             }
@@ -97,7 +97,7 @@ public class HandActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
 
             extras = data.getExtras();
             imageBitmap = (Bitmap) extras.get("data");
@@ -121,7 +121,7 @@ public class HandActivity extends AppCompatActivity {
         processImageLabeler(labeler, image);
     }
 
-    public void processImageLabeler(ImageLabeler labeler, InputImage image){
+    public void processImageLabeler(com.google.mlkit.vision.label.ImageLabeler labeler, InputImage image){
         labeler.process(image).addOnSuccessListener(new OnSuccessListener<List<ImageLabel>>() {
             @Override
             public void onSuccess(List<ImageLabel> labels) {
@@ -132,7 +132,7 @@ public class HandActivity extends AppCompatActivity {
                     float confidence = labels.get(0).getConfidence();
                     textView.setText(eachLabel+" : "+ (""+confidence * 100).subSequence(0,4)+"%"+"\n");
                 }
-             switch (eachLabel){
+                switch (eachLabel){
                     case "HELP":
                         textView.append("Comunicate");
 
@@ -198,3 +198,5 @@ public class HandActivity extends AppCompatActivity {
         dialog.show();
     }
 }
+
+

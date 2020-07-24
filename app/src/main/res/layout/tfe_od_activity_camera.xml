@@ -55,8 +55,8 @@
 
     <include
         android:id="@+id/bottom_sheet_layout"
-        android:visibility="invisible"
-        layout="@layout/tfe_od_layout_bottom_sheet" />
+        layout="@layout/tfe_od_layout_bottom_sheet"
+        android:visibility="invisible"/>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -105,7 +105,7 @@
             android:src="@android:drawable/ic_search_category_default"
             android:tint="@android:color/white"
             android:layout_margin="16dp"
-
+            android:visibility="invisible"
             app:layout_anchor="@id/bottom_sheet_layout"
             app:layout_anchorGravity="top|end"
             />

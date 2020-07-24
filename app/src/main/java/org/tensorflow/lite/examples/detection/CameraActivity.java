@@ -35,6 +35,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Trace;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
+
+
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
@@ -45,19 +51,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.appcompat.widget.Toolbar;
-
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.nio.ByteBuffer;
 import org.tensorflow.lite.examples.detection.env.ImageUtils;
 import org.tensorflow.lite.examples.detection.env.Logger;
-
-import java.nio.ByteBuffer;
 
 public abstract class CameraActivity extends AppCompatActivity
     implements OnImageAvailableListener,
@@ -221,6 +220,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
     intent.putExtra(KEY_USE_FACING, useFacing);
     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+
     restartWith(intent);
 
   }
@@ -259,8 +259,14 @@ public abstract class CameraActivity extends AppCompatActivity
         Camera.Size previewSize = camera.getParameters().getPreviewSize();
         previewHeight = previewSize.height;
         previewWidth = previewSize.width;
-        rgbBytes = new int[previewWidth * previewHeight];
-        onPreviewSizeChosen(new Size(previewSize.width, previewSize.height), 90);
+        //rgbBytes = new int[previewWidth * previewHeight];
+        //onPreviewSizeChosen(new Size(previewSize.width, previewSize.height), 90);
+          rgbBytes = new int[previewWidth * previewHeight];
+          int rotation = 90;
+          if (useFacing == CameraCharacteristics.LENS_FACING_FRONT) {
+              rotation = 270;
+          }
+          onPreviewSizeChosen(new Size(previewSize.width, previewSize.height), rotation);
       }
     } catch (final Exception e) {
       LOGGER.e(e, "Exception!");

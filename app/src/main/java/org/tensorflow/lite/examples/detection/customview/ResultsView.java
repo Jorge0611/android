@@ -15,9 +15,8 @@ limitations under the License.
 
 package org.tensorflow.lite.examples.detection.customview;
 
-import org.tensorflow.lite.examples.detection.tflite.SimilarityClassifier.Recognition;
-
 import java.util.List;
+import org.tensorflow.lite.examples.detection.tflite.SimilarityClassifier.Recognition;
 
 public interface ResultsView {
   public void setResults(final List<Recognition> results);
