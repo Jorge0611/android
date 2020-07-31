@@ -70,6 +70,7 @@ public class HandActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         take = findViewById(R.id.take);
         textView = findViewById(R.id.textView);
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
 
         dialog = new ProgressDialog(this);
         take.setOnClickListener(new View.OnClickListener() {
@@ -141,7 +142,7 @@ public class HandActivity extends AppCompatActivity {
 
                             Intent waIntent = new Intent(Intent.ACTION_SEND);
                             waIntent.setType("text/plain");
-                            String text = "ESTOY HERIDO, NECESITO AYUDA";
+                            String text = "I NEED HELP,PLEASE IM INJURED";
 
                             PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
                             //Check if package exists or not. If not then code
@@ -166,8 +167,8 @@ public class HandActivity extends AppCompatActivity {
                     case "GOOD":
                         textView.append("QUE BIEN");
 
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=79CPz7P2Ypo")));
-                        Log.i("Video", "Video Playing....");
+                     mp.setVolume(2.9f , 2.9f);
+                     mp.start();
                         break;
                     case "CPR":
                         textView.append("PRIMEROS AUXILIOS");
