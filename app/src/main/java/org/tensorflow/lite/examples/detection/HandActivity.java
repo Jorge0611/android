@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -124,6 +125,8 @@ public class HandActivity extends AppCompatActivity {
 
     public void processImageLabeler(com.google.mlkit.vision.label.ImageLabeler labeler, InputImage image){
         labeler.process(image).addOnSuccessListener(new OnSuccessListener<List<ImageLabel>>() {
+            private MediaPlayer mp;
+
             @Override
             public void onSuccess(List<ImageLabel> labels) {
                 dialog.dismiss();
@@ -166,8 +169,8 @@ public class HandActivity extends AppCompatActivity {
                         break;
                     case "GOOD":
                         textView.append("QUE BIEN");
-
-                     mp.setVolume(2.9f , 2.9f);
+                        
+                        mp.setVolume(2.9f , 2.9f);
                      mp.start();
                         break;
                     case "CPR":
