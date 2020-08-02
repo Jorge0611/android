@@ -68,7 +68,6 @@ public class HandActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hand);
 
         imageView = findViewById(R.id.image);
-        button = findViewById(R.id.button);
         take = findViewById(R.id.take);
         textView = findViewById(R.id.textView);
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);

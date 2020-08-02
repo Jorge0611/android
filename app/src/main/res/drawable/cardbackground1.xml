@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="false">
+        <shape>
+            <gradient android:angle="180"
+                android:startColor="@color/cardStart"
+                android:endColor="@color/cardEnd" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape>
+            <solid
+                android:color="@color/cardPressed" />
+        </shape>
+    </item>
+</selector>

@@ -1,4 +1,7 @@
 <resources>
+    <string name="app_name">HRecognition</string>
+    <string name="face_text">Face Recognition</string>
+    <string name="hand_text">Hand Recognition</string>
     <string name="faceString">Face Recognition</string>
     <string name="handString">Sign Detection</string>
     <string name="select_image">Select Image</string>

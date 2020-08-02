@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--App Colors-->
+    <color name="colorPrimary">#21BF74</color>
+    <color name="colorPrimaryDark">#1A985D</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="fontColors">#FFFFFF</color>
+
+
+
+    <!--Important Colors-->
+    <color name="layoutBackground">@color/colorPrimary</color>
+    <color name="layoutContainer">#FFFFFF</color>
+
+    <!--cardView Colors - Light -->
+    <color name="cardStart">#21BF74</color>
+    <color name="cardEnd">#21BF74</color>
+    <color name="cardPressed">#9021BF74</color>
+
+    <!--Do not Touch-->
     <color name="tfe_color_primary">#ffa800</color>
     <color name="tfe_color_primary_dark">#ff6f00</color>
     <color name="tfe_color_accent">#425066</color>
-
     <color name="tfe_semi_transparent">#66000000</color>
 </resources>
