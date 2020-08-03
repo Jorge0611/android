@@ -14,17 +14,21 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.mlkit.common.model.DownloadConditions;
 import com.google.mlkit.common.model.RemoteModelManager;
 import com.google.mlkit.vision.common.InputImage;
@@ -45,6 +49,12 @@ public class HandActivity extends AppCompatActivity {
     private ProgressDialog dialog;
     private Bundle extras;
     private Bitmap imageBitmap;
+    private LinearLayout helpLayout;
+    private LinearLayout gestureLayout2;
+    private BottomSheetBehavior<LinearLayout> sheetBehavior2;
+    protected ImageView bottomSheetArrowImageView2;
+
+
 
     private static final int ACCESS_FILE = 10;
     private static final int PERMISSION_FILE = 20;
@@ -70,6 +80,61 @@ public class HandActivity extends AppCompatActivity {
         imageView = findViewById(R.id.image);
         take = findViewById(R.id.take);
         textView = findViewById(R.id.textView);
+        helpLayout = findViewById(R.id.bottom_help_layout);
+        gestureLayout2 = findViewById(R.id.gesture_layout2);
+        sheetBehavior2 = BottomSheetBehavior.from(helpLayout);
+        bottomSheetArrowImageView2 = findViewById(R.id.bottom_sheet_arrow2);
+
+        ViewTreeObserver vto = gestureLayout2.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener(
+                new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+                            gestureLayout2.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                        } else {
+                            gestureLayout2.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                        }
+                        //                int width = bottomSheetLayout.getMeasuredWidth();
+                        int height = gestureLayout2.getMeasuredHeight();
+
+                        sheetBehavior2.setPeekHeight(height);
+                    }
+                });
+
+        sheetBehavior2.setHideable(false);
+
+        sheetBehavior2.setBottomSheetCallback(
+                new BottomSheetBehavior.BottomSheetCallback() {
+                    @Override
+                    public void onStateChanged(@NonNull View bottomSheet, int newState) {
+                        switch (newState) {
+                            case BottomSheetBehavior.STATE_HIDDEN:
+                                break;
+                            case BottomSheetBehavior.STATE_EXPANDED:
+                            {
+                                bottomSheetArrowImageView2.setImageResource(R.drawable.icn_chevron_down);
+                            }
+                            break;
+                            case BottomSheetBehavior.STATE_COLLAPSED:
+                            {
+                                bottomSheetArrowImageView2.setImageResource(R.drawable.icn_chevron_up);
+                            }
+                            break;
+                            case BottomSheetBehavior.STATE_DRAGGING:
+                                break;
+                            case BottomSheetBehavior.STATE_SETTLING:
+                                bottomSheetArrowImageView2.setImageResource(R.drawable.icn_chevron_up);
+                                break;
+                        }
+                    }
+
+                    @Override
+                    public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
+                });
+
+
+
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
 
         dialog = new ProgressDialog(this);
@@ -136,15 +201,15 @@ public class HandActivity extends AppCompatActivity {
                     textView.setText(eachLabel+" : "+ (""+confidence * 100).subSequence(0,4)+"%"+"\n");
                 }
                 switch (eachLabel){
-                    case "HELP":
-                        textView.append("Comunicate");
+                    case "GOOD":
+                        textView.append("PLAYS AUDIO");
 
                         PackageManager pm=getPackageManager();
                         try {
 
                             Intent waIntent = new Intent(Intent.ACTION_SEND);
                             waIntent.setType("text/plain");
-                            String text = "I NEED HELP,PLEASE IM INJURED";
+                            String text = "In case tyou see this message, is because everything is Okay";
 
                             PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
                             //Check if package exists or not. If not then code
@@ -160,24 +225,25 @@ public class HandActivity extends AppCompatActivity {
                         }
                         break;
                     case "INJURED":
-                        textView.append("ESTAS HERIDO!");
+                        textView.append("PLAY VIDEO");
 
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=mhBe7Q6mH3U")));
                         Log.i("Video", "Video Playing....");
 
                         break;
-                    case "GOOD":
+                    case "HELP":
                         textView.append("QUE BIEN");
                         
                         mp.setVolume(2.9f , 2.9f);
                      mp.start();
                         break;
                     case "CPR":
-                        textView.append("PRIMEROS AUXILIOS");
+                        textView.append("PLAY CPR VIDEO");
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=-NodDRTsV88")));
                         Log.i("Video", "Video Playing....");
                         break;
                     case "CALL":
+                        textView.append("CALL EMERGENCY NUMBER");
                         Intent intent = new Intent(Intent.ACTION_DIAL);
                         startActivity(intent);
                         break;

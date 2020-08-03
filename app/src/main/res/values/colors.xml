@@ -5,12 +5,16 @@
     <color name="colorPrimaryDark">#1A985D</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="fontColors">#FFFFFF</color>
+    <color name="helpFont">#FFFFFF</color>
+
 
 
 
     <!--Important Colors-->
     <color name="layoutBackground">@color/colorPrimary</color>
     <color name="layoutContainer">#FFFFFF</color>
+    <color name="layoutHelp">#B6B6B6</color>
+
 
     <!--cardView Colors - Light -->
     <color name="cardStart">#21BF74</color>
