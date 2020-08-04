@@ -31,14 +31,10 @@ public class MyAppIntro extends AppIntro {
 
         addSlide(AppIntroFragment.newInstance(
                 title = "Helpful!",
-                description = "Let us colaborate together!",
-                (Integer)(imageDrawable = R.drawable.slider1),
-                (Integer) (backgroundDrawable = R.drawable.bien)
-
-
-
-
-
+                description = "An easy way to show different hand signals belongs to their meaning." +
+                        "                                 Let us colaborate together!",
+                (Integer)(imageDrawable = R.drawable.slider6),
+                ContextCompat.getColor(getApplicationContext(),R.color.color2)
 
         ));
 
@@ -46,24 +42,21 @@ public class MyAppIntro extends AppIntro {
         addSlide(AppIntroFragment.newInstance(
 
                 title = "Different!",
-                description = "Respossive application just for you",
-                (Integer)(imageDrawable = R.drawable.slider2),
-                ContextCompat.getColor(getApplicationContext(),R.color.color1)
-
-
+                description = "Amazing and powerfull app that includes facial recognition just for you.",
+                (Integer)(imageDrawable = R.drawable.slider7),
+                R.drawable.bien
 
         ));
         addSlide(AppIntroFragment.newInstance(
 
                  "Innovative!",
-              "We're your link betwen emergency and help",
-                (Integer)(imageDrawable = R.drawable.slider4),
-                R.drawable.slider4
-
-
-
+              "We're your link betwen emergency and help.",
+                (Integer) (backgroundDrawable = R.drawable.slider9),
+                ContextCompat.getColor(getApplicationContext(),R.color.color1)
 
         ));
+
+
         isColorTransitionsEnabled = true;
         setTransformer(new AppIntroPageTransformerType.Parallax());
         setImmersiveMode();
