@@ -54,8 +54,6 @@ public class HandActivity extends AppCompatActivity {
     private BottomSheetBehavior<LinearLayout> sheetBehavior2;
     protected ImageView bottomSheetArrowImageView2;
 
-final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
-
 
     private static final int ACCESS_FILE = 10;
     private static final int PERMISSION_FILE = 20;
@@ -85,7 +83,7 @@ final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
         gestureLayout2 = findViewById(R.id.gesture_layout2);
         sheetBehavior2 = BottomSheetBehavior.from(helpLayout);
         bottomSheetArrowImageView2 = findViewById(R.id.bottom_sheet_arrow2);
-
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
         ViewTreeObserver vto = gestureLayout2.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(
                 new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -235,7 +233,7 @@ final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
                         textView.append("QUE BIEN");
                         
                         mp.setVolume(2.9f , 2.9f);
-                     mp.start();
+                        mp.start();
                         break;
                     case "CPR":
                         textView.append("PLAY CPR VIDEO");
