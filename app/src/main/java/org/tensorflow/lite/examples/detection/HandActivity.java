@@ -54,6 +54,7 @@ public class HandActivity extends AppCompatActivity {
     private BottomSheetBehavior<LinearLayout> sheetBehavior2;
     protected ImageView bottomSheetArrowImageView2;
 
+final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
 
 
     private static final int ACCESS_FILE = 10;
@@ -135,7 +136,6 @@ public class HandActivity extends AppCompatActivity {
 
 
 
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
 
         dialog = new ProgressDialog(this);
         take.setOnClickListener(new View.OnClickListener() {
