@@ -19,7 +19,7 @@ public class Presentacion extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent= new Intent(Presentacion.this, MainActivity.class);
+                Intent intent= new Intent(Presentacion.this, MyAppIntro.class);
                 Presentacion.this.startActivity(intent);
                 finish();
             }
