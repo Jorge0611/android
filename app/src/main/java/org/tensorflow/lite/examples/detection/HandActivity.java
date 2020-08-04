@@ -200,7 +200,7 @@ public class HandActivity extends AppCompatActivity {
                 }
                 switch (eachLabel){
                     case "GOOD":
-                        textView.append("PLAYS AUDIO");
+                        textView.append("SENDING MESSAGE");
 
                         PackageManager pm=getPackageManager();
                         try {
@@ -230,8 +230,8 @@ public class HandActivity extends AppCompatActivity {
 
                         break;
                     case "HELP":
-                        textView.append("QUE BIEN");
-                        
+                        textView.append("PLAYING SOUND");
+                        final MediaPlayer mp = MediaPlayer.create(getBaseContext(),R.raw.alert);
                         mp.setVolume(2.9f , 2.9f);
                         mp.start();
                         break;
