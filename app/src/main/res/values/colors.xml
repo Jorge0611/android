@@ -5,20 +5,21 @@
     <color name="colorPrimaryDark">#1A985D</color>
     <color name="colorAccent">#21BF74</color>
     <color name="fontColors">#FFFFFF</color>
+<<<<<<< HEAD
     <color name="helpFont">#FFFFFF</color>
     <color name="color1">#FF5733</color>
     <color name="color2">#F6165A </color>
     <color name="color3">#1DF1DA</color>
 
 
+=======
+>>>>>>> parent of 834bde6... Almost Done
 
 
 
     <!--Important Colors-->
     <color name="layoutBackground">@color/colorPrimary</color>
     <color name="layoutContainer">#FFFFFF</color>
-    <color name="layoutHelp">#B6B6B6</color>
-
 
     <!--cardView Colors - Light -->
     <color name="cardStart">#21BF74</color>

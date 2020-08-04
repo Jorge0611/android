@@ -14,21 +14,17 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.mlkit.common.model.DownloadConditions;
 import com.google.mlkit.common.model.RemoteModelManager;
 import com.google.mlkit.vision.common.InputImage;
@@ -49,6 +45,7 @@ public class HandActivity extends AppCompatActivity {
     private ProgressDialog dialog;
     private Bundle extras;
     private Bitmap imageBitmap;
+<<<<<<< HEAD
     private LinearLayout helpLayout;
     private LinearLayout gestureLayout2;
     private BottomSheetBehavior<LinearLayout> sheetBehavior2;
@@ -56,6 +53,8 @@ public class HandActivity extends AppCompatActivity {
 
 final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
 
+=======
+>>>>>>> parent of 834bde6... Almost Done
 
     private static final int ACCESS_FILE = 10;
     private static final int PERMISSION_FILE = 20;
@@ -81,6 +80,7 @@ final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
         imageView = findViewById(R.id.image);
         take = findViewById(R.id.take);
         textView = findViewById(R.id.textView);
+<<<<<<< HEAD
         helpLayout = findViewById(R.id.bottom_help_layout);
         gestureLayout2 = findViewById(R.id.gesture_layout2);
         sheetBehavior2 = BottomSheetBehavior.from(helpLayout);
@@ -136,6 +136,9 @@ final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
 
 
 
+=======
+        final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
+>>>>>>> parent of 834bde6... Almost Done
 
         dialog = new ProgressDialog(this);
         take.setOnClickListener(new View.OnClickListener() {
@@ -201,15 +204,15 @@ final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
                     textView.setText(eachLabel+" : "+ (""+confidence * 100).subSequence(0,4)+"%"+"\n");
                 }
                 switch (eachLabel){
-                    case "GOOD":
-                        textView.append("PLAYS AUDIO");
+                    case "HELP":
+                        textView.append("Comunicate");
 
                         PackageManager pm=getPackageManager();
                         try {
 
                             Intent waIntent = new Intent(Intent.ACTION_SEND);
                             waIntent.setType("text/plain");
-                            String text = "In case tyou see this message, is because everything is Okay";
+                            String text = "I NEED HELP,PLEASE IM INJURED";
 
                             PackageInfo info=pm.getPackageInfo("com.whatsapp", PackageManager.GET_META_DATA);
                             //Check if package exists or not. If not then code
@@ -225,25 +228,24 @@ final MediaPlayer mp = MediaPlayer.create(this, R.raw.alert);
                         }
                         break;
                     case "INJURED":
-                        textView.append("PLAY VIDEO");
+                        textView.append("ESTAS HERIDO!");
 
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=mhBe7Q6mH3U")));
                         Log.i("Video", "Video Playing....");
 
                         break;
-                    case "HELP":
+                    case "GOOD":
                         textView.append("QUE BIEN");
                         
                         mp.setVolume(2.9f , 2.9f);
                      mp.start();
                         break;
                     case "CPR":
-                        textView.append("PLAY CPR VIDEO");
+                        textView.append("PRIMEROS AUXILIOS");
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=-NodDRTsV88")));
                         Log.i("Video", "Video Playing....");
                         break;
                     case "CALL":
-                        textView.append("CALL EMERGENCY NUMBER");
                         Intent intent = new Intent(Intent.ACTION_DIAL);
                         startActivity(intent);
                         break;
