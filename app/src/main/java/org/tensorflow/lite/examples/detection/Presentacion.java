@@ -14,12 +14,11 @@ public class Presentacion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presentacion);
 
-
         timer=new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent= new Intent(Presentacion.this, MyAppIntro.class);
+                Intent intent= new Intent(Presentacion.this, MainActivity.class);
                 Presentacion.this.startActivity(intent);
                 finish();
             }
