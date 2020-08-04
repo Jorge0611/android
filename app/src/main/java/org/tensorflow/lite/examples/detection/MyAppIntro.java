@@ -32,7 +32,7 @@ public class MyAppIntro extends AppIntro {
         addSlide(AppIntroFragment.newInstance(
                 title = "Helpful!",
                 description = "An easy way to show different hand signals belongs to their meaning." +
-                        "                                 Let us colaborate together!",
+                        "Let us colaborate together!",
                 (Integer)(imageDrawable = R.drawable.slider6),
                 ContextCompat.getColor(getApplicationContext(),R.color.color2)
 
