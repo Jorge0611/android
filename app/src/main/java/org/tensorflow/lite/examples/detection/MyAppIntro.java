@@ -56,7 +56,7 @@ public class MyAppIntro extends AppIntro {
         addSlide(AppIntroFragment.newInstance(
 
                  "Innovative!",
-              "We're your link betwen emergency and help",
+              "We're your link Between emergency and help",
                 (Integer)(imageDrawable = R.drawable.slider4),
                 R.drawable.slider4
 
