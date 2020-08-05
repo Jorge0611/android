@@ -2,24 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/fondo_degrado"
+    android:background="@color/layoutBackground"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp">
-
 
     <TextView
         android:id="@+id/dlg_title"
         android:layout_gravity="center"
         android:textSize="20sp"
         tools:text="The dialog title"
+        android:fontFamily="@font/raleway_medium"
+        android:textColor="#FFFF"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/dlg_image"
-        android:layout_width="330dp"
-        android:layout_height="421dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
@@ -28,11 +29,8 @@
     <EditText
         android:layout_gravity="center"
         android:id="@+id/dlg_input"
-        android:layout_width="180dp"
-        android:layout_height="35dp"
-        android:background="@drawable/input_custom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         tools:hint="The dialog hint"
-        />
-
-
+        android:background="#FFFF"/>
 </LinearLayout>
