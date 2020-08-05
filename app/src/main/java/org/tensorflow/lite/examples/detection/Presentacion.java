@@ -22,7 +22,7 @@ public class Presentacion extends AppCompatActivity {
                 Presentacion.this.startActivity(intent);
                 finish();
             }
-        }, 5000);
+        }, 2000);
 
     }
 }

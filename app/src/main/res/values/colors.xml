@@ -8,16 +8,11 @@
     <color name="helpFont">#FFFFFF</color>
     <color name="color1">#FF5733</color>
     <color name="color2">#F6165A </color>
-    <color name="color3">#1DF1DA</color>
-
-
-
 
 
     <!--Important Colors-->
     <color name="layoutBackground">@color/colorPrimary</color>
     <color name="layoutContainer">#FFFFFF</color>
-    <color name="layoutHelp">#B6B6B6</color>
 
 
     <!--cardView Colors - Light -->
@@ -26,8 +21,5 @@
     <color name="cardPressed">#9021BF74</color>
 
     <!--Do not Touch-->
-    <color name="tfe_color_primary">#ffa800</color>
-    <color name="tfe_color_primary_dark">#ff6f00</color>
-    <color name="tfe_color_accent">#425066</color>
     <color name="tfe_semi_transparent">#66000000</color>
 </resources>

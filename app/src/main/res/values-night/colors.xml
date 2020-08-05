@@ -9,7 +9,6 @@
     <!--Important Colors-->
     <color name="layoutBackground">#212121</color>
     <color name="layoutContainer">#424242</color>
-    <color name="layoutHelp">#616161</color>
 
 
     <!--cardView Colors - Light -->

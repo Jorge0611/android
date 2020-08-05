@@ -43,7 +43,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/face"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="wrap_content"
             android:layout_margin="20dp"
             app:cardElevation="20dp"
             android:layout_marginBottom="50dp"
@@ -87,7 +87,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/hand"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="wrap_content"
             android:layout_margin="20dp"
             app:cardElevation="20dp"
             android:layout_marginBottom="50dp"

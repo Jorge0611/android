@@ -92,7 +92,6 @@
 <!--        app:layout_anchor="@id/dummy" />-->
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_seach"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_search_category_default"
