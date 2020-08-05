@@ -393,7 +393,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
     tvTitle.setText("Add Face");
     ivFace.setImageBitmap(rec.getCrop());
-    etName.setHint("          Name");
+    etName.setHint("Name");
 
     builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
       @Override
